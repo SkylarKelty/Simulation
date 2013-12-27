@@ -5,9 +5,18 @@
  * @author Skylar Kelty <skylarkelty@gmail.com>
  */
 
+#include "engine.h"
+
 /**
- * The main function is used to initialize the engine
+ * Constructor for engine
  */
-int main( int argc, const char* argv[] ) {
-	return 0;
+Engine::Engine() {
+
+}
+
+/**
+ * Destructor for engine
+ */
+Engine::~Engine() {
+
 }

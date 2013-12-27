@@ -5,9 +5,8 @@
  * @author Skylar Kelty <skylarkelty@gmail.com>
  */
 
-/**
- * The main function is used to initialize the engine
- */
-int main( int argc, const char* argv[] ) {
-	return 0;
+class Engine {
+public:
+	Engine();
+	~Engine();
 }
