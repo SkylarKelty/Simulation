@@ -16,6 +16,8 @@ Engine::EngineStatus Engine::_status = Engine::EngineStatus::READY;
  * Constructor for engine
  */
 Engine::Engine() {
+	assert(Engine::_status == Engine::EngineStatus::READY);
+
 	this->actors = new LinkedList<Actor *>();
 	this->fstore = new Store();
 	this->setupSigintHandler();
