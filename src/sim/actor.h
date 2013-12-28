@@ -5,8 +5,9 @@
  */
 
 #include "src/common.h"
+#include "src/persistence/serializable.h"
 
-class Actor {
+class Actor : public Serializable {
 friend class Engine;
 
 protected:
