@@ -21,6 +21,12 @@ protected:
 
 public:
 	~LLNode();
+	
 	LLNode<T> *getNext();
 	LLNode<T> *getPrev();
+
+	int length() {
+		return this->length(0);
+	}
+	int length(int curr);
 };

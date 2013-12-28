@@ -45,3 +45,14 @@ template <class T>
 LLNode<T> *LLNode<T>::getPrev() {
 	return this->prev;
 }
+
+/**
+ * Get the length of this chain
+ */
+template <class T>
+int LLNode<T>::length(int curr) {
+	if (this->next) {
+		curr = curr + this->next->length();
+	}
+	return curr + 1;
+}

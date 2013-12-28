@@ -15,7 +15,6 @@ class LinkedList {
 private:
 	LLNode<T> *head;
 	LLNode<T> *tail;
-	int len;
 
 public:
 	LinkedList();
@@ -23,6 +22,24 @@ public:
 
 	void append(LLNode<T> *node);
 
-	LLNode<T> *first();
-	LLNode<T> *last();
+	/**
+	 * Get the first element of the list
+	 */
+	LLNode<T> *first() {
+		return this->head;
+	}
+
+	/**
+	 * Get the last element of the list
+	 */
+	LLNode<T> *last() {
+		return this->tail;
+	}
+
+	/**
+	 * Get the length of the list
+	 */
+	int length() {
+		return this->head->length();
+	}
 };

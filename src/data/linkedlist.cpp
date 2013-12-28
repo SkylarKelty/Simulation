@@ -28,8 +28,6 @@ LinkedList<T, LLNode>::~LinkedList() {
  */
 template <typename T, template <typename> class LLNode>
 void LinkedList<T, LLNode>::append(LLNode<T> *node) {
-	this->len++;
-
 	// Is this the first item?
 	if (!this->head) {
 		this->head = node;
@@ -39,20 +37,4 @@ void LinkedList<T, LLNode>::append(LLNode<T> *node) {
 
 	this->tail->next = node;
 	this->tail = node;
-}
-
-/**
- * Get the first element of the list
- */
-template <typename T, template <typename> class LLNode>
-LLNode<T> *LinkedList<T, LLNode>::first() {
-	return this->head;
-}
-
-/**
- * Get the last element of the list
- */
-template <typename T, template <typename> class LLNode>
-LLNode<T> *LinkedList<T, LLNode>::last() {
-	return this->tail;
 }
