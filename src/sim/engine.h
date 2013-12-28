@@ -16,8 +16,10 @@ private:
 
 	void setupSigintHandler();
 
+	void tick();
+
 protected:
-	LinkedList<Actor> *actors;
+	LinkedList<Actor *> *actors;
 
 public:
 	Engine();

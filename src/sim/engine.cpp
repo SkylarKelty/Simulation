@@ -9,6 +9,7 @@
 #include <thread>
 #include <chrono>
 #include "engine.h"
+#include "src/data/LLNode.h"
 
 Engine::EngineStatus Engine::_status = Engine::EngineStatus::READY;
 
@@ -16,7 +17,7 @@ Engine::EngineStatus Engine::_status = Engine::EngineStatus::READY;
  * Constructor for engine
  */
 Engine::Engine() {
-	this->actors = new LinkedList<Actor>();
+	this->actors = new LinkedList<Actor *>();
 	this->setupSigintHandler();
 }
 
@@ -28,11 +29,28 @@ Engine::~Engine() {
 }
 
 /**
+ * Tick the simulation once
+ */
+void Engine::tick() {
+	// Tick all of the actors
+	LLNode<Actor *> *cur = this->actors->first();
+	while (cur) {
+		if (cur->data) {
+			cur->data->act();
+		}
+		cur = cur->getNext();
+	}
+}
+
+/**
  * Run through this simulation
  */
 void Engine::run() {
 	Engine::_status = Engine::EngineStatus::RUNNING;
 	while (Engine::_status == Engine::EngineStatus::RUNNING) {
+		// Tick!
+		this->tick();
+		// Sleep :)
 		std::this_thread::sleep_for(std::chrono::milliseconds(100));
 	}
 }

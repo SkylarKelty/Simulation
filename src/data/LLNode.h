@@ -27,9 +27,10 @@ private:
 protected:
 	LLNode<T> *next;
 	LLNode<T> *prev;
-	T data;
 
 public:
+	T data;
+	
 	~LLNode();
 	
 	/**

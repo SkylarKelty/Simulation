@@ -32,4 +32,4 @@ LLNode<T>::~LLNode() {
 }
 
 // Compiler magic
-template class LLNode<Actor>;
+template class LLNode<Actor *>;

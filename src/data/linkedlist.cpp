@@ -41,4 +41,4 @@ void LinkedList<T>::append(LLNode<T> *node) {
 }
 
 // Compiler magic
-template class LinkedList<Actor>;
+template class LinkedList<Actor *>;
