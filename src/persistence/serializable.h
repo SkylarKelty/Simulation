@@ -4,6 +4,8 @@
  * @author Skylar Kelty <skylarkelty@gmail.com>
  */
 
+#pragma once
+
 class Serializable {
 friend class Store;
 	

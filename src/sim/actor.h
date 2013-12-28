@@ -4,6 +4,8 @@
  * @author Skylar Kelty <skylarkelty@gmail.com>
  */
 
+#pragma once
+
 #include "src/common.h"
 #include "src/persistence/serializable.h"
 
