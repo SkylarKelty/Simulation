@@ -17,7 +17,12 @@ struct LLNode {
 friend class LinkedList<T>;
 
 private:
-	inline int length(int curr);
+	inline int length(int curr) {
+		if (this->next) {
+			curr = curr + this->next->length();
+		}
+		return curr + 1;
+	}
 
 protected:
 	LLNode<T> *next;
@@ -27,8 +32,19 @@ protected:
 public:
 	~LLNode();
 	
-	LLNode<T> *getNext();
-	LLNode<T> *getPrev();
+	/**
+	 * Get next element
+	 */
+	inline LLNode<T> *getNext() {
+		return this->next;
+	}
+
+	/**
+	 * Get previous element
+	 */
+	inline LLNode<T> *getPrev() {
+		return this->prev;
+	}
 
 	/**
 	 * Returns the length of this chain
