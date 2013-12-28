@@ -14,6 +14,9 @@ template <class T>
 struct LLNode {
 friend class LinkedList;
 
+private:
+	inline int length(int curr);
+
 protected:
 	LLNode<T> *next;
 	LLNode<T> *prev;
@@ -25,8 +28,11 @@ public:
 	LLNode<T> *getNext();
 	LLNode<T> *getPrev();
 
+	/**
+	 * Returns the length of this chain
+	 */
 	int length() {
 		return this->length(0);
 	}
-	int length(int curr);
+
 };

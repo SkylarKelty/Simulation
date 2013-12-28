@@ -25,21 +25,21 @@ public:
 	/**
 	 * Get the first element of the list
 	 */
-	LLNode<T> *first() {
+	inline LLNode<T> *first() {
 		return this->head;
 	}
 
 	/**
 	 * Get the last element of the list
 	 */
-	LLNode<T> *last() {
+	inline LLNode<T> *last() {
 		return this->tail;
 	}
 
 	/**
 	 * Get the length of the list
 	 */
-	int length() {
+	inline int length() {
 		return this->head->length();
 	}
 };
