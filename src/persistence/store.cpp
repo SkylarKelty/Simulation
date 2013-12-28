@@ -24,6 +24,8 @@ Store::~Store() {
  * Write data to the persistence logs
  */
 void Store::write(Serializable *data) {
+	this->_file << data->getUID();
+	this->_file << ": ";
 	this->_file << data->s_out();
 	this->_file << "\n";
 }
