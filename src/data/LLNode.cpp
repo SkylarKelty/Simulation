@@ -13,6 +13,9 @@
  */
 template <typename T>
 LLNode<T>::~LLNode() {
+	// Delete data
+	delete data;
+
 	// Delete this element, if there is no element before us this will
 	// destroy the entire chain.
 	if (!this->prev) {
