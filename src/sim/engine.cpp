@@ -5,8 +5,10 @@
  * @author Skylar Kelty <skylarkelty@gmail.com>
  */
 
-#include "engine.h"
 #include <signal.h>
+#include <thread>
+#include <chrono>
+#include "engine.h"
 
 Engine::EngineStatus Engine::_status = Engine::EngineStatus::READY;
 
@@ -16,7 +18,6 @@ Engine::EngineStatus Engine::_status = Engine::EngineStatus::READY;
 Engine::Engine() {
 	this->actors = new IntLinkedList();
 	this->setupSigintHandler();
-
 }
 
 /**
@@ -32,7 +33,7 @@ Engine::~Engine() {
 void Engine::run() {
 	Engine::_status = Engine::EngineStatus::RUNNING;
 	while (Engine::_status == Engine::EngineStatus::RUNNING) {
-
+		std::this_thread::sleep_for(std::chrono::milliseconds(100));
 	}
 }
 
