@@ -5,6 +5,7 @@
  */
 
 #include "src/common.h"
+#include "src/data/LLNode.h"
 #include "src/data/linkedlist.h"
 #include "src/sim/actor.h"
 #include "src/persistence/store.h"
@@ -15,17 +16,21 @@ private:
 	static Engine::EngineStatus _status;
 
 	Store *fstore;
+	LinkedList<Actor *> *actors;
 
 	void setupSigintHandler();
-
 	void tick();
-
-protected:
-	LinkedList<Actor *> *actors;
 
 public:
 	Engine();
 	~Engine();
 
 	void run();
+
+	/**
+	 * Adds an actor to the engine
+	 */
+	inline void addActor(Actor *actor) {
+		this->actors->append(new LLNode<Actor *>(actor));
+	}
 };
