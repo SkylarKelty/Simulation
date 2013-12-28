@@ -7,23 +7,22 @@
 
 #pragma once
 
-class LLNode;
-
-#include "LLNode.h"
-
 /**
  * A linked list
  */
+template <typename T, template <typename> class LLNode>
 class LinkedList {
 private:
-	LLNode *head;
-	LLNode *tail;
+	LLNode<T> *head;
+	LLNode<T> *tail;
 	int len;
 
 public:
 	LinkedList();
 	~LinkedList();
-	void append(LLNode *node);
-	LLNode *first();
-	LLNode *last();
+
+	void append(LLNode<T> *node);
+
+	LLNode<T> *first();
+	LLNode<T> *last();
 };
