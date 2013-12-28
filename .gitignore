@@ -1,5 +1,5 @@
 out/*
-sim
+/sim
 *.d
 *.o
 
@@ -8,7 +8,6 @@ sim
 
 autom4te.cache/
 
-src/config.h
 config.status
 configure
 config.log
