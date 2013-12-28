@@ -31,6 +31,7 @@ protected:
 public:
 	T data;
 	
+	LLNode(T data) { this->data = data; }
 	~LLNode();
 	
 	/**
