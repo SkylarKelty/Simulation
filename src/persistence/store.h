@@ -7,6 +7,7 @@
 #include <iostream>
 #include <fstream>
 #include "src/common.h"
+#include "src/persistence/serializable.h"
 
 class Store {
 friend class Engine;
@@ -19,6 +20,7 @@ protected:
 	~Store();
 
 public:
+	void write(Serializable *data);
 	void write(const char *data);
 	void flush();
 };

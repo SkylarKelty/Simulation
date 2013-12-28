@@ -42,6 +42,20 @@ void Engine::tick() {
 		}
 		cur = cur->getNext();
 	}
+}
+
+/**
+ * Tock the simulation once
+ */
+void Engine::tock() {
+	// Save all of the actors
+	LLNode<Actor *> *cur = this->actors->first();
+	while (cur) {
+		if (cur->data) {
+			this->fstore->write(cur->data);
+		}
+		cur = cur->getNext();
+	}
 
 	// Flush the logs
 	this->fstore->flush();
@@ -51,12 +65,22 @@ void Engine::tick() {
  * Run through this simulation
  */
 void Engine::run() {
+	short tock = 0;
+
 	Engine::_status = Engine::EngineStatus::RUNNING;
 	while (Engine::_status == Engine::EngineStatus::RUNNING) {
 		// Tick!
 		this->tick();
+
 		// Sleep :)
 		std::this_thread::sleep_for(std::chrono::milliseconds(100));
+
+		// Is this a tock?
+		tock = tock + 1;
+		if (tock > 9) {
+			this->tock();
+			tock = 0;
+		}
 	}
 
 	// Close up the file store

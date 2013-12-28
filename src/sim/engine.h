@@ -20,6 +20,7 @@ private:
 
 	void setupSigintHandler();
 	void tick();
+	void tock();
 
 public:
 	Engine();

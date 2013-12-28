@@ -23,6 +23,14 @@ Store::~Store() {
 /**
  * Write data to the persistence logs
  */
+void Store::write(Serializable *data) {
+	this->_file << data->s_out();
+	this->_file << "\n";
+}
+
+/**
+ * Write data to the persistence logs
+ */
 void Store::write(const char *data) {
 	this->_file << data;
 	this->_file << "\n";
