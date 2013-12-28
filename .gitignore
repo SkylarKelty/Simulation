@@ -1,5 +1,5 @@
 out/*
-run
+sim
 *.d
 *.o
 
