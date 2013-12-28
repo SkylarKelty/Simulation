@@ -10,24 +10,24 @@
 /**
  * Constructor for Linked List
  */
-template <typename T, template <typename> class LLNode>
-LinkedList<T, LLNode>::LinkedList() {
+template <typename T>
+LinkedList<T>::LinkedList() {
 	this->len = 0;
 }
 
 /**
  * Destructor for Linked List
  */
-template <typename T, template <typename> class LLNode>
-LinkedList<T, LLNode>::~LinkedList() {
+template <typename T>
+LinkedList<T>::~LinkedList() {
 	delete this->head;
 }
 
 /**
  * Add a new item to the list
  */
-template <typename T, template <typename> class LLNode>
-void LinkedList<T, LLNode>::append(LLNode<T> *node) {
+template <typename T>
+void LinkedList<T>::append(LLNode<T> *node) {
 	// Is this the first item?
 	if (!this->head) {
 		this->head = node;

@@ -7,7 +7,7 @@
 
 #include "LLNode_fwd.h"
 
-template <typename T, template <typename> class LLNode> class LinkedList;
+template <typename T> class LinkedList;
 
 // Our typdefs 
-typedef LinkedList<int, IntLLNode> IntLinkedList;
+typedef LinkedList<int> IntLinkedList;

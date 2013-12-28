@@ -20,3 +20,10 @@ Engine::Engine() {
 Engine::~Engine() {
 
 }
+
+/**
+ * Run through this simulation
+ */
+void Engine::run() {
+	
+}

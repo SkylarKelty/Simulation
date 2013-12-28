@@ -5,11 +5,17 @@
  * @author Skylar Kelty <skylarkelty@gmail.com>
  */
 
-#include <stdio.h>
+#include "sim/engine.h"
 
 /**
  * The main function is used to initialize the engine
  */
 int main( int argc, const char* argv[] ) {
+	Engine *sim = new Engine();
+
+	sim->run();
+
+	delete sim;
+
 	return 0;
 }

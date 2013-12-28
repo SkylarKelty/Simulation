@@ -7,10 +7,12 @@
 
 #pragma once
 
+#include "LLNode.h"
+
 /**
  * A linked list
  */
-template <typename T, template <typename> class LLNode>
+template <typename T>
 class LinkedList {
 private:
 	LLNode<T> *head;
