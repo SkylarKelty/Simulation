@@ -17,6 +17,7 @@ Engine::EngineStatus Engine::_status = Engine::EngineStatus::READY;
  */
 Engine::Engine() {
 	this->actors = new LinkedList<Actor *>();
+	this->fstore = new Store();
 	this->setupSigintHandler();
 }
 
@@ -25,6 +26,7 @@ Engine::Engine() {
  */
 Engine::~Engine() {
 	delete this->actors;
+	delete this->fstore;
 }
 
 /**
