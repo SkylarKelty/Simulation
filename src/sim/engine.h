@@ -10,6 +10,9 @@
 
 class Engine {
 private:
+	enum EngineStatus { READY, RUNNING, HALTING };
+	static Engine::EngineStatus _status;
+
 	void setupSigintHandler();
 
 protected:

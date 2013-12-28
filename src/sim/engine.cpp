@@ -8,12 +8,15 @@
 #include "engine.h"
 #include <signal.h>
 
+Engine::EngineStatus Engine::_status = Engine::EngineStatus::READY;
+
 /**
  * Constructor for engine
  */
 Engine::Engine() {
 	this->actors = new IntLinkedList();
 	this->setupSigintHandler();
+
 }
 
 /**
@@ -27,7 +30,10 @@ Engine::~Engine() {
  * Run through this simulation
  */
 void Engine::run() {
+	Engine::_status = Engine::EngineStatus::RUNNING;
+	while (Engine::_status == Engine::EngineStatus::RUNNING) {
 
+	}
 }
 
 /**
@@ -37,6 +43,7 @@ void Engine::setupSigintHandler() {
 	struct sigaction sigIntHandler;
 	sigIntHandler.sa_handler = [](int) {
 		// Handle sigint
+		Engine::_status = Engine::EngineStatus::HALTING;
 	};
 	sigemptyset(&sigIntHandler.sa_mask);
 	sigIntHandler.sa_flags = 0;
