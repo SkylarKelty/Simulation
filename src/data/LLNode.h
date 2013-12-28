@@ -7,12 +7,14 @@
 
 #pragma once
 
+#include "src/common.h"
+
 /**
  * A Linked List Node
  */
-template <class T>
+template <typename T>
 struct LLNode {
-friend class LinkedList;
+friend class LinkedList<T>;
 
 private:
 	inline int length(int curr);

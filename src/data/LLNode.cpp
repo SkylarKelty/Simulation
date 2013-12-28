@@ -50,9 +50,12 @@ LLNode<T> *LLNode<T>::getPrev() {
  * Get the length of this chain
  */
 template <class T>
-int LLNode<T>::length(int curr) {
+inline int LLNode<T>::length(int curr) {
 	if (this->next) {
 		curr = curr + this->next->length();
 	}
 	return curr + 1;
 }
+
+// Compiler magic
+template class LLNode<int>;

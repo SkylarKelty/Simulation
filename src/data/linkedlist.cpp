@@ -6,13 +6,13 @@
  */
 
 #include "linkedlist.h"
+#include "LLNode.h"
 
 /**
  * Constructor for Linked List
  */
 template <typename T>
 LinkedList<T>::LinkedList() {
-	this->len = 0;
 }
 
 /**
@@ -38,3 +38,6 @@ void LinkedList<T>::append(LLNode<T> *node) {
 	this->tail->next = node;
 	this->tail = node;
 }
+
+// Compiler magic
+template class LinkedList<int>;

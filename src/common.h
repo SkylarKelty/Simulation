@@ -5,9 +5,8 @@
  * @author Skylar Kelty <skylarkelty@gmail.com>
  */
 
-#include "LLNode_fwd.h"
-
 template <typename T> class LinkedList;
+template <typename T> struct LLNode;
 
-// Our typdefs 
+typedef LLNode<int> IntLLNode;
 typedef LinkedList<int> IntLinkedList;

@@ -7,7 +7,7 @@
 
 #pragma once
 
-#include "LLNode.h"
+#include "src/common.h"
 
 /**
  * A linked list

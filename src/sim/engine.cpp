@@ -11,7 +11,7 @@
  * Constructor for engine
  */
 Engine::Engine() {
-
+	this->actors = new IntLinkedList();
 }
 
 /**
@@ -25,5 +25,5 @@ Engine::~Engine() {
  * Run through this simulation
  */
 void Engine::run() {
-	
+
 }

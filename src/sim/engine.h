@@ -5,10 +5,8 @@
  * @author Skylar Kelty <skylarkelty@gmail.com>
  */
 
-#pragma once
-
-#include "src/data/LLNode_fwd.h"
-#include "src/data/linkedlist_fwd.h"
+#include "src/common.h"
+#include "src/data/linkedlist.h"
 
 class Engine {
 protected:
