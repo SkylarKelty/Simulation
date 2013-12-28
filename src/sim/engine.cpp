@@ -41,6 +41,9 @@ void Engine::tick() {
 		}
 		cur = cur->getNext();
 	}
+
+	// Flush the logs
+	this->fstore->flush();
 }
 
 /**
@@ -54,6 +57,10 @@ void Engine::run() {
 		// Sleep :)
 		std::this_thread::sleep_for(std::chrono::milliseconds(100));
 	}
+
+	// Close up the file store
+	delete this->fstore;
+	this->fstore = 0;
 }
 
 /**

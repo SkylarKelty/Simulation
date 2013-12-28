@@ -25,4 +25,12 @@ Store::~Store() {
  */
 void Store::write(const char *data) {
 	this->_file << data;
+	this->_file << "\n";
+}
+
+/**
+ * Flush the log files
+ */
+void Store::flush() {
+	this->_file.flush();
 }

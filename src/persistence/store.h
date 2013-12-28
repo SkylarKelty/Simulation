@@ -12,7 +12,7 @@ class Store {
 friend class Engine;
 
 private:
-	std::fstream _file;
+	std::ofstream _file;
 
 protected:
 	Store();
@@ -20,4 +20,5 @@ protected:
 
 public:
 	void write(const char *data);
+	void flush();
 };
