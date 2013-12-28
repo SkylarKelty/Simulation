@@ -11,7 +11,7 @@
  * Constructor for Linked List
  */
 LinkedList::LinkedList() {
-
+	this->len = 0;
 }
 
 /**
@@ -25,6 +25,10 @@ LinkedList::~LinkedList() {
  * Add a new item to the list
  */
 void LinkedList::append(LLNode *node) {
+	this->len++;
+
+	node->parent = this;
+
 	// Is this the first item?
 	if (!this->head) {
 		this->head = node;
