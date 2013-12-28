@@ -1,6 +1,5 @@
 /**
- * An example simulation to show how something
- * like this might work one day...
+ * An efficient c++ simulation demo
  *
  * @author Skylar Kelty <skylarkelty@gmail.com>
  */
