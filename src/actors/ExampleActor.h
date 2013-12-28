@@ -19,5 +19,4 @@ public:
 	ExampleActor();
 
 	void act();
-
 };
