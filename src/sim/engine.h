@@ -7,6 +7,7 @@
 
 #include "src/common.h"
 #include "src/data/linkedlist.h"
+#include "src/sim/actor.h"
 
 class Engine {
 private:
@@ -16,7 +17,7 @@ private:
 	void setupSigintHandler();
 
 protected:
-	IntLinkedList *actors;
+	LinkedList<Actor> *actors;
 
 public:
 	Engine();

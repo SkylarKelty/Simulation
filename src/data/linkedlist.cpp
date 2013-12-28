@@ -7,6 +7,7 @@
 
 #include "linkedlist.h"
 #include "LLNode.h"
+#include "src/sim/actor.h"
 
 /**
  * Constructor for Linked List
@@ -40,4 +41,4 @@ void LinkedList<T>::append(LLNode<T> *node) {
 }
 
 // Compiler magic
-template class LinkedList<int>;
+template class LinkedList<Actor>;

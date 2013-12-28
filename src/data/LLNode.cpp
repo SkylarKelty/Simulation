@@ -6,6 +6,7 @@
  */
 
 #include "LLNode.h"
+#include "src/sim/actor.h"
 
 /**
  * Dont leak!
@@ -31,4 +32,4 @@ LLNode<T>::~LLNode() {
 }
 
 // Compiler magic
-template class LLNode<int>;
+template class LLNode<Actor>;

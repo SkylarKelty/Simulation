@@ -7,6 +7,3 @@
 
 template <typename T> class LinkedList;
 template <typename T> class LLNode;
-
-typedef LLNode<int> IntLLNode;
-typedef LinkedList<int> IntLinkedList;

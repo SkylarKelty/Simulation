@@ -16,7 +16,7 @@ Engine::EngineStatus Engine::_status = Engine::EngineStatus::READY;
  * Constructor for engine
  */
 Engine::Engine() {
-	this->actors = new IntLinkedList();
+	this->actors = new LinkedList<Actor>();
 	this->setupSigintHandler();
 }
 
