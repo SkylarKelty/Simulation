@@ -81,7 +81,7 @@ bin_PROGRAMS = sim$(EXEEXT)
 subdir = .
 DIST_COMMON = $(srcdir)/Makefile.in $(srcdir)/Makefile.am \
 	$(top_srcdir)/configure $(am__configure_deps) \
-	$(srcdir)/config.h.in $(dist_noinst_SCRIPTS) depcomp \
+	$(srcdir)/config.h.in $(dist_noinst_SCRIPTS) depcomp INSTALL \
 	install-sh missing
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
 am__aclocal_m4_deps = $(top_srcdir)/configure.ac
@@ -96,8 +96,7 @@ CONFIG_CLEAN_VPATH_FILES =
 am__installdirs = "$(DESTDIR)$(bindir)"
 PROGRAMS = $(bin_PROGRAMS)
 am__dirstamp = $(am__leading_dot)dirstamp
-am_sim_OBJECTS = src/main.$(OBJEXT) src/data/LLNode.$(OBJEXT) \
-	src/data/linkedlist.$(OBJEXT) src/sim/engine.$(OBJEXT)
+am_sim_OBJECTS = src/main.$(OBJEXT)
 sim_OBJECTS = $(am_sim_OBJECTS)
 sim_LDADD = $(LDADD)
 SCRIPTS = $(dist_noinst_SCRIPTS)
@@ -262,7 +261,7 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 AUTOMAKE_OPTIONS = subdir-objects
 ACLOCAL_AMFLAGS = ${ACLOCAL_FLAGS}
-sim_SOURCES = src/main.cpp src/data/LLNode.cpp src/data/linkedlist.cpp src/sim/engine.cpp
+sim_SOURCES = src/main.cpp
 dist_noinst_SCRIPTS = autogen.sh
 all: config.h
 	$(MAKE) $(AM_MAKEFLAGS) all-am
@@ -367,24 +366,6 @@ src/$(DEPDIR)/$(am__dirstamp):
 	@$(MKDIR_P) src/$(DEPDIR)
 	@: > src/$(DEPDIR)/$(am__dirstamp)
 src/main.$(OBJEXT): src/$(am__dirstamp) src/$(DEPDIR)/$(am__dirstamp)
-src/data/$(am__dirstamp):
-	@$(MKDIR_P) src/data
-	@: > src/data/$(am__dirstamp)
-src/data/$(DEPDIR)/$(am__dirstamp):
-	@$(MKDIR_P) src/data/$(DEPDIR)
-	@: > src/data/$(DEPDIR)/$(am__dirstamp)
-src/data/LLNode.$(OBJEXT): src/data/$(am__dirstamp) \
-	src/data/$(DEPDIR)/$(am__dirstamp)
-src/data/linkedlist.$(OBJEXT): src/data/$(am__dirstamp) \
-	src/data/$(DEPDIR)/$(am__dirstamp)
-src/sim/$(am__dirstamp):
-	@$(MKDIR_P) src/sim
-	@: > src/sim/$(am__dirstamp)
-src/sim/$(DEPDIR)/$(am__dirstamp):
-	@$(MKDIR_P) src/sim/$(DEPDIR)
-	@: > src/sim/$(DEPDIR)/$(am__dirstamp)
-src/sim/engine.$(OBJEXT): src/sim/$(am__dirstamp) \
-	src/sim/$(DEPDIR)/$(am__dirstamp)
 
 sim$(EXEEXT): $(sim_OBJECTS) $(sim_DEPENDENCIES) $(EXTRA_sim_DEPENDENCIES) 
 	@rm -f sim$(EXEEXT)
@@ -393,16 +374,11 @@ sim$(EXEEXT): $(sim_OBJECTS) $(sim_DEPENDENCIES) $(EXTRA_sim_DEPENDENCIES)
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)
 	-rm -f src/*.$(OBJEXT)
-	-rm -f src/data/*.$(OBJEXT)
-	-rm -f src/sim/*.$(OBJEXT)
 
 distclean-compile:
 	-rm -f *.tab.c
 
 @AMDEP_TRUE@@am__include@ @am__quote@src/$(DEPDIR)/main.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/data/$(DEPDIR)/LLNode.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/data/$(DEPDIR)/linkedlist.Po@am__quote@
-@AMDEP_TRUE@@am__include@ @am__quote@src/sim/$(DEPDIR)/engine.Po@am__quote@
 
 .cpp.o:
 @am__fastdepCXX_TRUE@	$(AM_V_CXX)depbase=`echo $@ | sed 's|[^/]*$$|$(DEPDIR)/&|;s|\.o$$||'`;\
@@ -670,10 +646,6 @@ distclean-generic:
 	-test . = "$(srcdir)" || test -z "$(CONFIG_CLEAN_VPATH_FILES)" || rm -f $(CONFIG_CLEAN_VPATH_FILES)
 	-rm -f src/$(DEPDIR)/$(am__dirstamp)
 	-rm -f src/$(am__dirstamp)
-	-rm -f src/data/$(DEPDIR)/$(am__dirstamp)
-	-rm -f src/data/$(am__dirstamp)
-	-rm -f src/sim/$(DEPDIR)/$(am__dirstamp)
-	-rm -f src/sim/$(am__dirstamp)
 
 maintainer-clean-generic:
 	@echo "This command is intended for maintainers to use"
@@ -684,7 +656,7 @@ clean-am: clean-binPROGRAMS clean-generic mostlyclean-am
 
 distclean: distclean-am
 	-rm -f $(am__CONFIG_DISTCLEAN_FILES)
-	-rm -rf src/$(DEPDIR) src/data/$(DEPDIR) src/sim/$(DEPDIR)
+	-rm -rf src/$(DEPDIR)
 	-rm -f Makefile
 distclean-am: clean-am distclean-compile distclean-generic \
 	distclean-hdr distclean-tags
@@ -732,7 +704,7 @@ installcheck-am:
 maintainer-clean: maintainer-clean-am
 	-rm -f $(am__CONFIG_DISTCLEAN_FILES)
 	-rm -rf $(top_srcdir)/autom4te.cache
-	-rm -rf src/$(DEPDIR) src/data/$(DEPDIR) src/sim/$(DEPDIR)
+	-rm -rf src/$(DEPDIR)
 	-rm -f Makefile
 maintainer-clean-am: distclean-am maintainer-clean-generic
 
