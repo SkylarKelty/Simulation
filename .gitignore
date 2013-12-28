@@ -8,7 +8,7 @@ sim
 
 autom4te.cache/
 
-config.h
+src/config.h
 config.status
 configure
 config.log
