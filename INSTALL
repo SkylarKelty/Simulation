@@ -1,0 +1,2 @@
+Run 'aclocal' followed by 'autoconf' and './configure'
+Then run 'make'

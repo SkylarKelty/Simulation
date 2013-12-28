@@ -17,3 +17,7 @@ Makefile
 Makefile.am
 
 aclocal.m4
+
+install-sh
+missing
+stamp-h1
