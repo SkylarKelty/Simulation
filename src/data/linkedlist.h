@@ -13,15 +13,18 @@
  */
 template <typename T>
 class LinkedList {
+friend class Engine;
+
 private:
 	LLNode<T> *head;
 	LLNode<T> *tail;
 
+protected:
+	void append(LLNode<T> *node);
+
 public:
 	LinkedList();
 	~LinkedList();
-
-	void append(LLNode<T> *node);
 
 	/**
 	 * Get the first element of the list
