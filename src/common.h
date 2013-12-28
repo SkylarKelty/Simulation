@@ -6,7 +6,7 @@
  */
 
 template <typename T> class LinkedList;
-template <typename T> struct LLNode;
+template <typename T> class LLNode;
 
 typedef LLNode<int> IntLLNode;
 typedef LinkedList<int> IntLinkedList;

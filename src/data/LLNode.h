@@ -13,7 +13,7 @@
  * A Linked List Node
  */
 template <typename T>
-struct LLNode {
+class LLNode {
 friend class LinkedList<T>;
 
 private:
