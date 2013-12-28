@@ -20,7 +20,8 @@ protected:
 	~Store();
 
 public:
+	void start();
 	void write(Serializable *data);
 	void write(const char *data);
-	void flush();
+	void end();
 };

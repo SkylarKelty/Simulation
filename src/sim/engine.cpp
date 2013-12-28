@@ -48,6 +48,9 @@ void Engine::tick() {
  * Tock the simulation once
  */
 void Engine::tock() {
+	// Start the log transaction
+	this->fstore->start();
+
 	// Save all of the actors
 	LLNode<Actor *> *cur = this->actors->first();
 	while (cur) {
@@ -57,8 +60,8 @@ void Engine::tock() {
 		cur = cur->getNext();
 	}
 
-	// Flush the logs
-	this->fstore->flush();
+	// End the log transaction
+	this->fstore->end();
 }
 
 /**

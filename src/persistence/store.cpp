@@ -21,6 +21,13 @@ Store::~Store() {
 }
 
 /**
+ * Start a new transaction (Write a separator to the logs)
+ */
+void Store::start() {
+	this->_file << "MARK \n";
+}
+
+/**
  * Write data to the persistence logs
  */
 void Store::write(Serializable *data) {
@@ -39,8 +46,8 @@ void Store::write(const char *data) {
 }
 
 /**
- * Flush the log files
+ * End the current transaction (Flush the log files)
  */
-void Store::flush() {
+void Store::end() {
 	this->_file.flush();
 }
