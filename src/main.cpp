@@ -5,6 +5,8 @@
  * @author Skylar Kelty <skylarkelty@gmail.com>
  */
 
+#include <stdio.h>
+
 /**
  * The main function is used to initialize the engine
  */
