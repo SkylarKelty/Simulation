@@ -10,9 +10,12 @@ class Actor {
 friend class Engine;
 
 protected:
-	void act();
+	/**
+	 * Causes the actor to "act" (Do something)
+	 */
+	virtual void act() { }
 
 public:
 	Actor();
-	~Actor();
+	virtual ~Actor();
 };

@@ -13,10 +13,3 @@ Actor::Actor() {
 Actor::~Actor() {
 
 }
-
-/**
- * Causes the actor to "act" (Do something)
- */
-void Actor::act() {
-
-}
