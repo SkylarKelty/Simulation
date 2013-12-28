@@ -1,2 +1,2 @@
-Run 'aclocal' followed by 'autoconf' and './configure'
+Run 'aclocal' followed by 'autoconf', 'automake --add-missing' and './configure'
 Then run 'make'
