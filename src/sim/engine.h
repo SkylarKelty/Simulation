@@ -9,6 +9,9 @@
 #include "src/data/linkedlist.h"
 
 class Engine {
+private:
+	void setupSigintHandler();
+
 protected:
 	IntLinkedList *actors;
 
